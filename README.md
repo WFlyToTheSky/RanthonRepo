@@ -152,6 +152,8 @@ Thanks for reading my documentation, and I hope you learned some stuff about how
 
 ---
 # Patch Notes
+### 1.1.5
+##### - Added MIT license.
 ### 1.1.4
 ##### - Added the modules CalPiDart, CalPiDartLon, CalPiVie, and CalPiVieLon.
 ##### - Fixed grammar errors in the README.md file.

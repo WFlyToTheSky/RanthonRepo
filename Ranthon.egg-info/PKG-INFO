@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: Ranthon
-Version: 1.1.4
+Version: 1.1.5
 Summary: A collection of Python packages written by Walter J Hare.
 Home-page: https://github.com/WFlyToTheSky/RanthonRepo
 License: UNKNOWN
@@ -158,6 +158,8 @@ Description: # Ranthon Guide
         
         ---
         # Patch Notes
+        ### 1.1.5
+        ##### - Added MIT license.
         ### 1.1.4
         ##### - Added the modules CalPiDart, CalPiDartLon, CalPiVie, and CalPiVieLon.
         ##### - Fixed grammar errors in the README.md file.
