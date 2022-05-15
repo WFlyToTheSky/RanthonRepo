@@ -1,10 +1,10 @@
 # Ranthon Guide
 ##### By: *Walter J Hare*
-**Ranthon** is a collection of **Python** packages written by *Walter J Hare*. It requires the **FileLog** project, which is automatically installed.
+**Ranthon** is a collection of **Python** packages written by *Walter J Hare*. It requires the **FileLog**, **Math**, **Decimal**, and **Random** projects, which are automatically installed with the project.
 ## InfSeq
-**InfSeq** is a **Python** module that generates numbers in infinite sequences. So far it only includes two modules **CalFib** which generates numbers in the **Fibonacci Sequence** for a set number of rounds, and **CalFibLon**  which calculates the **Fibonacci Sequence** forever.
+**InfSeq** is a **Python** module that generates numbers in infinite sequences. So far it includes six modules **CalFib** which generates numbers in the **Fibonacci Sequence** for a set number of rounds, **CalFibLon**  which calculates the **Fibonacci Sequence** forever, **CalPiDart** which calculates the digets of **兀** *(Pronounced Pi)* for a set number of rounds using the **dart method**, **CalPiDartLon** which calculates the digets of **兀** *(Pronounced Pi)* forever using the **dart method**, **CalPiVie** which calculates the digets of **兀** *(Pronounced Pi)* for a set number of rounds using **Viète’s method**, and **CalPiVieLon** which calculates the digets of **兀** *(Pronounced Pi)* forever using **Viète’s method**.
 ##### CalFib
-The first attribute of **CalFib** is the amount of times you want to run the code, the second attribute is if you want to log the numbers or not *(Write True if you want to log it and False if you don't)* this feature uses the **FileLog** project.
+The first attribute of **CalFib** is the amount of times you want to run the code, and the second attribute is if you want to log the numbers or not *(Write True if you want to log it and False if you don't)*. This module uses the **FileLog** project.
 ###### The Code
 &nbsp;
 
@@ -26,7 +26,7 @@ The first attribute of **CalFib** is the amount of times you want to run the cod
             p = x
     return n
 ##### CalFibLon
-There is only one attribute to **CalFibLon** it is the log attribute which I mentioned on the **CalFib** section of the documentation, but I will explain it again here. The attribute checks if you want to log the numbers or not *(Write True if you want to log it and False if you don't)* this feature uses the **FileLog** project.
+There is only one attribute to **CalFibLon** it is the log attribute which I mentioned on the **CalFib** section of the documentation, but I will explain it again here. The attribute checks if you want to log the numbers or not *(Write True if you want to log it and False if you don't)*. This module uses the **FileLog** project.
 ###### The Code
 &nbsp;
 
@@ -46,14 +46,115 @@ There is only one attribute to **CalFibLon** it is the log attribute which I men
             x = n
             n = (n + p)
             p = x
+##### CalPiDart
+The first attribute of **CalPiDart** is the seed used to generate random numbers, the second attribute is the amount of times you want to run the code *(The higher it is the slower, but it is more acurate)*, and the third attrubute is if you want to log it or not *(Write True if you do, and False if you do not)*. This module uses the projects **Random** and **FileLog**.
+###### The Code
+&nbsp;
+
+    def calpidart(seed, rounds, log):
+        inside = 0
+        random.seed(seed)
+
+        if log == True:
+            for i in range(rounds):
+                # compute position of the point
+                x = random.uniform(0.0, 1.0)
+                y = random.uniform(0.0, 1.0)
+                result = x*x + y*y
+                if (result <= 1.0):
+                    inside += 1
+                Writer('current', False) >> inside
+
+    else:
+        for i in range(rounds):
+            # compute position of the point
+            x = random.uniform(0.0, 1.0)
+            y = random.uniform(0.0, 1.0)
+            result = x*x + y*y
+            if (result <= 1.0):
+                inside += 1
+
+    return(inside)
+
+##### CalPiDartLon
+The first attribute of **CalPiDartLon** is the seed used to generate random numbers, and the second attrubute is if you want to log it or not *(Write True if you do, and False if you do not)*. This module uses the projects **Random** and **FileLog**.
+###### The Code
+&nbsp;
+
+    def calpidartlon(seed, log):
+        inside = 0
+        random.seed(seed)
+
+        if log == True:
+            while True:
+                # compute position of the point
+                x = random.uniform(0.0, 1.0)
+                y = random.uniform(0.0, 1.0)
+                result = x*x + y*y
+                if (result <= 1.0):
+                    inside += 1
+                Writer('current', False) >> inside
+
+    else:
+        while True:
+            # compute position of the point
+            x = random.uniform(0.0, 1.0)
+            y = random.uniform(0.0, 1.0)
+            result = x*x + y*y
+            if (result <= 1.0):
+                inside += 1
+##### CalPiVie
+The first attribute of **CalPiVie** is the amount of times you want to run the code *(The higher it is the slower, but it is more acurate)*, the second  attribute is the maximum amount of digets you want to have, and the third attribute is whether or not you want to log it. This module uses the projects **Math**, **Decimal**, and **FileLog**.
+##### The Code
+&nbsp;
+
+    def calpivie(rounds, digetmax, log):
+        purple = Decimal(math.sqrt(2))
+        answer = Decimal(purple / 2)
+        getcontext().prec = digetmax
+
+        if log == True:
+            for i in range(rounds):
+                purple = Decimal(math.sqrt(2 + purple))
+                answer = Decimal(answer * (purple / 2))
+                Writer('current', False) >> Decimal(2 / answer)
+        else:
+            for i in range(rounds):
+                purple = Decimal(math.sqrt(2 + purple))
+                answer = Decimal(answer * (purple / 2))
+                      
+        return(Decimal(2 / answer))
+
+##### CalPiVieLon
+The first attribute of **CalPiVieLon** is the maximum amount of digets you want to have, and the second attribute is whether or not you want to log it. This module uses the projects **Math**, **Decimal**, and **FileLog**.
+###### The Code
+&nbsp;
+
+    def calpivielon(digetmax, log):
+        purple = Decimal(math.sqrt(2))
+        answer = Decimal(purple / 2)
+        getcontext().prec = digetmax
+
+        if log == True:
+            while True:
+                purple = Decimal(math.sqrt(2 + purple))
+                answer = Decimal(answer * (purple / 2))
+                Writer('current', False) >> Decimal(2 / answer)
+        else:
+            while True:
+                purple = Decimal(math.sqrt(2 + purple))
+            answer = Decimal(answer * (purple / 2))
+
+
 
 # Conclusion
 Thanks for reading my documentation, and I hope you learned some stuff about how to use my python project **Ranthon**.
 
 ---
 # Patch Notes
+### 1.1.4
+##### - Added the modules CalPiDart, CalPiDartLon, CalPiVie, and CalPiVieLon.
+##### - Fixed grammar errors in the README.md file.
 ### 1.0.6
 ##### - Added the patch notes section to the README.md file.
 ##### - Fixed spelling and grammar issues on the README.md file.
-### 1.0.7
-##### - Fixed spelling error on README.md file.

@@ -7,3 +7,4 @@ Ranthon.egg-info/requires.txt
 Ranthon.egg-info/top_level.txt
 infseq/__init__.py
 infseq/fibseq.py
+infseq/pi.py

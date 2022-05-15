@@ -3,10 +3,10 @@ from pathlib import Path
 this_directory = Path(__file__).parent
 
 __project__  = "Ranthon"
-__version__ = "1.0.7"
+__version__ = "1.1.4"
 __description__ = "A collection of Python packages written by Walter J Hare."
 __packages__ = ["infseq"]
-__install_requires__ = ["filelog"]
+__install_requires__ = ["filelog", "math", "decimal" "random"]
 __long_description__ = (this_directory / "README.md").read_text()
 __long_description_content_type__ = 'text/markdown'
 __url__ = 'https://github.com/WFlyToTheSky/RanthonRepo'
