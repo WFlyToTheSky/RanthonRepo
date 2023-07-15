@@ -1,6 +1,6 @@
 # Ranthon Guide
-##### By: *Walter J Hare*
-**Ranthon** is a collection of **Python** packages written by *Walter J Hare*. It requires the **FileLog**, **Math**, **Decimal**, and **Random** projects, which are automatically installed with the project.
+##### By: *WFlyToTheSky*
+**Ranthon** is a collection of **Python** packages written by *WFlyToTheSky*. It requires the **FileLog**, **Math**, **Decimal**, and **Random** projects, which are automatically installed with the project.
 ## InfSeq
 **InfSeq** is a **Python** module that generates numbers in infinite sequences. So far it includes six modules **CalFib** which generates numbers in the **Fibonacci Sequence** for a set number of rounds, **CalFibLon**  which calculates the **Fibonacci Sequence** forever, **CalPiDart** which calculates the digets of **兀** *(Pronounced Pi)* for a set number of rounds using the **dart method**, **CalPiDartLon** which calculates the digets of **兀** *(Pronounced Pi)* forever using the **dart method**, **CalPiVie** which calculates the digets of **兀** *(Pronounced Pi)* for a set number of rounds using **Viète’s method**, and **CalPiVieLon** which calculates the digets of **兀** *(Pronounced Pi)* forever using **Viète’s method**.
 ##### CalFib
